@@ -14,6 +14,7 @@
     </sprites>
     <sprites name="gspr_Ships">
       <sprite>sprites\spr_Player_Ship</sprite>
+      <sprite>sprites\spr_Royal_Ship</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -29,9 +30,11 @@
       <object>objects\obj_UI_Controller</object>
       <object>objects\obj_Tile_Controller</object>
       <object>objects\obj_Game_Controller</object>
+      <object>objects\obj_AI_Controller</object>
     </objects>
     <objects name="gobj_Ships">
       <object>objects\obj_Player_Ship</object>
+      <object>objects\obj_Royal_Ship</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -26,10 +26,25 @@
           <argument>
             <kind>1</kind>
             <string>///Initial Settup
-//Spawn player ship and camera follower
+
+globalvar grid, playerTurn, aiTurn;
+
+//Camera setup.
 view_xview[0] = (room_width / 2) - (view_wview[0] / 2);
 view_yview[0] = (room_height / 2) - (view_yview[0] / 2);
+
+//Spawn the player ship.
 instance_create(view_xview[0] + 352, view_yview[0] + 256, obj_Player_Ship);
+
+//Spawn test enemy ship
+instance_create(view_xview[0] + 224, view_yview[0] + 128, obj_Royal_Ship);
+
+//This will be used to trigger AI after the player have performed an action.
+playerTurn = true;
+aiTurn = false;
+
+//This is the grid that pathing is based on.
+grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
 </string>
           </argument>
         </arguments>
