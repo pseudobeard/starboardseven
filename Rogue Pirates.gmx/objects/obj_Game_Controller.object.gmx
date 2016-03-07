@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Initial Settup
-
-globalvar grid, playerTurn, aiTurn;
+//Global variables to be used by other objects.
+globalvar grid, playerTurn, aiTurn, playerMaxHull, playerHull, targetShipMaxHull,
+targetShipHull, targetShipSpeed, targetAquired;
 
 //Camera setup.
 view_xview[0] = (room_width / 2) - (view_wview[0] / 2);
@@ -39,12 +40,27 @@ instance_create(view_xview[0] + 352, view_yview[0] + 256, obj_Player_Ship);
 //Spawn test enemy ship
 instance_create(view_xview[0] + 224, view_yview[0] + 128, obj_Royal_Ship);
 
+//Spawn test merchant ship
+instance_create(view_xview[0] + 352, view_yview[0] + 480, obj_Merchant_Ship);
+
 //This will be used to trigger AI after the player have performed an action.
 playerTurn = true;
 aiTurn = false;
 
 //This is the grid that pathing is based on.
 grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
+
+//Player Ship Stats.
+playerMaxHull = 10;
+playerHull = 10;
+
+//Targetting Data
+targetAquired = false;
+
+//Target Ship Stats.
+targetShipMaxHull = 0;
+targetShipHull = 0;
+targetShipSpeed = 0;
 </string>
           </argument>
         </arguments>

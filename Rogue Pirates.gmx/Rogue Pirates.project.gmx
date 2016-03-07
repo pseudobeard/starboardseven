@@ -11,10 +11,12 @@
   <sprites name="sprites">
     <sprites name="gspr_UI">
       <sprite>sprites\spr_UI_Overlay</sprite>
+      <sprite>sprites\spr_Cursor</sprite>
     </sprites>
     <sprites name="gspr_Ships">
       <sprite>sprites\spr_Player_Ship</sprite>
       <sprite>sprites\spr_Royal_Ship</sprite>
+      <sprite>sprites\spr_Merchant_Ship</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -24,7 +26,11 @@
   <scripts name="scripts">
     <script>scripts\create_sector.gml</script>
     <script>scripts\draw_grid.gml</script>
+    <script>scripts\destroy_cursor.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\pirateFont</font>
+  </fonts>
   <objects name="objects">
     <objects name="gobj_Controllers">
       <object>objects\obj_UI_Controller</object>
@@ -34,7 +40,12 @@
     </objects>
     <objects name="gobj_Ships">
       <object>objects\obj_Player_Ship</object>
+      <object>objects\obj_NPC_Ship_Parent</object>
       <object>objects\obj_Royal_Ship</object>
+      <object>objects\obj_Merchant_Ship</object>
+    </objects>
+    <objects name="gobj_UI">
+      <object>objects\obj_Cursor</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -8,6 +8,55 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Values for mouse position in the screen space.
+xx = 0;
+yy = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>xx = mouse_x - view_xview[0];
+yy = mouse_y - view_yview[0];
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -25,7 +74,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_UI_Overlay, 0, 0, 0);
+            <string>///Draw all of the UI elements
+//This draws the UI frame
+draw_sprite(spr_UI_Overlay, 0, 0, 0);
+
+//Draw the titles of each of the frames using a custom font.
+draw_set_colour(c_white);
+draw_set_font(pirateFont);
+
+draw_text(60, 547, "Event Log");
+draw_text(535, 547, "Actions");
+draw_text(781, 23, "Target");
+draw_text(795, 395, "You");
+
+//Draw the mouse's x and y position based on where it is on screen.
+draw_text(10, 10, xx);
+draw_text(100, 10, yy);
+
+//Player Ship Stats
+draw_text(776, 432, "Hull Integrity:   " + string(playerHull));
+draw_healthbar(776, 462, 961, 482, (playerHull/playerMaxHull) * 100, c_gray, c_red, c_green, 0, 1, 0);
+
+//Target Ship Stats
+if (targetAquired) {
+    draw_text(776, 60, "Hull Integrity:   " + string(targetShipHull));
+    draw_healthbar(776, 90, 961, 110, (targetShipHull/targetShipMaxHull) * 100, c_gray, c_red, c_green, 0, 1, 0);
+} else {
+    draw_text(776, 60, "No Target");
+}
 </string>
           </argument>
         </arguments>
