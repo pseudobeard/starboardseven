@@ -12,11 +12,15 @@
     <sprites name="gspr_UI">
       <sprite>sprites\spr_UI_Overlay</sprite>
       <sprite>sprites\spr_Cursor</sprite>
+      <sprite>sprites\spr_Target</sprite>
     </sprites>
     <sprites name="gspr_Ships">
       <sprite>sprites\spr_Player_Ship</sprite>
       <sprite>sprites\spr_Royal_Ship</sprite>
       <sprite>sprites\spr_Merchant_Ship</sprite>
+    </sprites>
+    <sprites name="gspr_Environment">
+      <sprite>sprites\spr_Ocean_Wave</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -46,6 +50,7 @@
     </objects>
     <objects name="gobj_UI">
       <object>objects\obj_Cursor</object>
+      <object>objects\obj_Target</object>
     </objects>
   </objects>
   <rooms name="rooms">
