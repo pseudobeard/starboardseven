@@ -31,6 +31,8 @@
     <script>scripts\create_sector.gml</script>
     <script>scripts\draw_grid.gml</script>
     <script>scripts\destroy_cursor.gml</script>
+    <script>scripts\move_player.gml</script>
+    <script>scripts\execute_royal_ship_ai.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\pirateFont</font>
