@@ -33,6 +33,7 @@
     <script>scripts\destroy_cursor.gml</script>
     <script>scripts\move_player.gml</script>
     <script>scripts\execute_royal_ship_ai.gml</script>
+    <script>scripts\execute_merchant_ship_ai.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\pirateFont</font>
@@ -45,6 +46,7 @@
       <object>objects\obj_AI_Controller</object>
     </objects>
     <objects name="gobj_Ships">
+      <object>objects\obj_All_Ships</object>
       <object>objects\obj_Player_Ship</object>
       <object>objects\obj_NPC_Ship_Parent</object>
       <object>objects\obj_Royal_Ship</object>

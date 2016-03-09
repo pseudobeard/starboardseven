@@ -30,6 +30,9 @@
 globalvar grid, playerTurn, aiTurn, playerMaxHull, playerHull, targetShipMaxHull,
 targetShipHull, targetShipSpeed, targetAquired;
 
+//This is the grid that pathing is based on.
+grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
+
 //Camera setup.
 view_xview[0] = (room_width / 2) - (view_wview[0] / 2);
 view_yview[0] = (room_height / 2) - (view_yview[0] / 2);
@@ -37,8 +40,9 @@ view_yview[0] = (room_height / 2) - (view_yview[0] / 2);
 //Spawn the player ship.
 instance_create(view_xview[0] + 352, view_yview[0] + 256, obj_Player_Ship);
 
-//Spawn test enemy ship
+//Spawn test enemy ships
 instance_create(view_xview[0] + 224, view_yview[0] + 128, obj_Royal_Ship);
+instance_create(view_xview[0] + 256, view_yview[0] + 160, obj_Royal_Ship);
 
 //Spawn test merchant ship
 instance_create(view_xview[0] + 352, view_yview[0] + 480, obj_Merchant_Ship);
@@ -46,9 +50,6 @@ instance_create(view_xview[0] + 352, view_yview[0] + 480, obj_Merchant_Ship);
 //This will be used to trigger AI after the player have performed an action.
 playerTurn = true;
 aiTurn = false;
-
-//This is the grid that pathing is based on.
-grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
 
 //Player Ship Stats.
 playerMaxHull = 10;

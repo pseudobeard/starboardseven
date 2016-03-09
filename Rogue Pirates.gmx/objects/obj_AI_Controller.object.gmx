@@ -31,8 +31,13 @@ if (!playerTurn){
     var ship;
     var i;
     var royalShipCount = instance_number(obj_Royal_Ship);
+    var merchantShipCount = instance_number(obj_Merchant_Ship);
     for(i = 0; i &lt; royalShipCount; i++) {
         ship = instance_find(obj_Royal_Ship, i);
+        execute_royal_ship_ai(ship);
+    }
+    for(i = 0; i &lt; merchantShipCount; i++) {
+        ship = instance_find(obj_Merchant_Ship, i);
         execute_royal_ship_ai(ship);
     }
     

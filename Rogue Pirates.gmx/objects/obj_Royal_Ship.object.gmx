@@ -43,7 +43,7 @@
 //Starting Stats
 shipMaxHull = 10;
 shipHull = 10;
-shipSpeed = 1;
+shipSpeed = 2;
 </string>
           </argument>
         </arguments>
