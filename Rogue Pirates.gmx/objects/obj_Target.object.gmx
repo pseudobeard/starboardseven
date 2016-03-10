@@ -30,6 +30,40 @@ image_speed = 0;
 
 targetID = instance_place(x, y, obj_NPC_Ship_Parent);
 targetID.locked = true;
+targetAquired = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Relinquish target data
+if(instance_exists(targetID)) {
+    targetID.locked = false;
+}
+targetShipMaxHull = 0;
+targetShipHull = 0;
+targetShipSpeed = 0;
+targetID = 0;
+targetX = 0;
+targetY = 0;
+targetAquired = false;
 </string>
           </argument>
         </arguments>
@@ -61,10 +95,6 @@ targetShipSpeed = targetID.shipSpeed;
 //If user hits the backspace key, it break lock and
 //doesn't spawn a cursor.
 if(keyboard_check_pressed(vk_backspace)) {
-    targetID.locked = false;
-    targetShipMaxHull = 0;
-    targetShipHull = 0;
-    targetShipSpeed = 0;
     instance_destroy();
 }
 
@@ -89,6 +119,9 @@ if(keyboard_check_pressed(vk_down)) {
     instance_destroy();
     targetID.locked = false;
 }
+
+targetX = x;
+targetY = y;
 </string>
           </argument>
         </arguments>

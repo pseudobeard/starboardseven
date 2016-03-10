@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initial Settup
+            <string>///Initial Setup
 //Global variables to be used by other objects.
-globalvar grid, playerTurn, aiTurn, playerMaxHull, playerHull, targetShipMaxHull,
-targetShipHull, targetShipSpeed, targetAquired;
+globalvar grid, playerTurn, disableActions, playerMaxHull, playerHull, targetShipMaxHull,
+targetShipHull, targetShipSpeed, targetAquired, targetID, targetX, targetY,
+actionList;
 
 //This is the grid that pathing is based on.
 grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
@@ -49,7 +50,7 @@ instance_create(view_xview[0] + 352, view_yview[0] + 480, obj_Merchant_Ship);
 
 //This will be used to trigger AI after the player have performed an action.
 playerTurn = true;
-aiTurn = false;
+disableActions = false;
 
 //Player Ship Stats.
 playerMaxHull = 10;
@@ -62,6 +63,8 @@ targetAquired = false;
 targetShipMaxHull = 0;
 targetShipHull = 0;
 targetShipSpeed = 0;
+
+actionList = 'none';
 </string>
           </argument>
         </arguments>
