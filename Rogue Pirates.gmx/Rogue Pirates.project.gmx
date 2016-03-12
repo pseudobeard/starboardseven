@@ -45,6 +45,8 @@
     <script>scripts\execute_merchant_ship_ai.gml</script>
     <script>scripts\fire_cannons.gml</script>
     <script>scripts\destroy_ship.gml</script>
+    <script>scripts\move_royal_ship.gml</script>
+    <script>scripts\move_NPC.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\pirateFont</font>

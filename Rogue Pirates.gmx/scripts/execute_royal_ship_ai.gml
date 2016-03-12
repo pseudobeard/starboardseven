@@ -11,35 +11,43 @@ if(instance_exists(ship)) {
         } else if(distance_to_object(obj_Player_Ship) <= roundRange) {
             ship.munitionsLoaded = 'round shot';
             instance_create(x + 16, y + 16, obj_Enemy_Round_Shot);
-        } else {
+         } else { 
             obj_AI_Controller.alarm[0] = 15;
             mp_grid_clear_rectangle(grid, x, y, x + 32, y + 32);
             if (instance_exists(obj_Player_Ship)){
-                var path = path_add();
-                if (mp_grid_path(grid, path, x, y, obj_Player_Ship.x, obj_Player_Ship.y, 0)) {
-                    path_start(path, 0, 0, 0);
-                    path_position += shipSpeed / path_get_length(path_index) * 32;
-                    xxp = path_get_x(path_index, path_position);
-                    yyp = path_get_y(path_index, path_position);
-                    //If collision is possible, reduce tranvel distance
-                    if(place_meeting(xxp, yyp, obj_All_Ships)) {
-                        path_position -= 1/ path_get_length(path_index) * 32;
+                    var move1;
+                    var move2;
+                    for( var i = 0; i < 2; i++){
+                        if( abs( obj_Player_Ship.x - x ) > abs(obj_Player_Ship.y - y) )
+                        {
+                            if( obj_Player_Ship.x > x)
+                            {
+                                move1 = 'right';
+                            } else {
+                                move1 = 'left';
+                            }
+                            if( obj_Player_Ship.y > y)
+                            {
+                                move2 = 'down';
+                            } else {
+                                move2 = 'up';
+                            }
+                        } else {
+                            if( obj_Player_Ship.y > y)
+                            {
+                                move1 = 'down';
+                            } else {
+                                move1 = 'up';
+                            }
+                            if( obj_Player_Ship.x > x)
+                            {
+                                move2 = 'right';
+                            } else {
+                                move2 = 'left';
+                            }
+                        }
+                        move_NPC(move1, move2);
                     }
-                    xxp = path_get_x(path_index, path_position);
-                    yyp = path_get_y(path_index, path_position);
-                    mp_grid_add_rectangle(grid, xxp, yyp, xxp + 32, yyp + 32);
-                    
-                    //Change Sprite
-                    if(xxp > x) {
-                        image_index = 0;
-                    } else if(xxp < x) {
-                        image_index = 1;
-                    } else if(yyp > y) {
-                        image_index = 3;
-                    } else if(yyp < y) {
-                        image_index = 2;
-                    }
-                }
             }
         }
     }
