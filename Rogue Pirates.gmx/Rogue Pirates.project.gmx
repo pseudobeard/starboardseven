@@ -7,7 +7,11 @@
     <extension index="0">extensions\TileSet 1 and bonus Wallset</extension>
     <extension index="1">extensions\Draw Grid Script</extension>
   </NewExtensions>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="bg_music">
+      <sound>sound\pirate_wav</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="gspr_UI">
       <sprite>sprites\spr_UI_Overlay</sprite>
