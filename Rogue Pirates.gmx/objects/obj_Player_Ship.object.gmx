@@ -29,6 +29,8 @@
 image_index = 0;
 image_speed = 0;
 sail_speed = 3;
+direction_list = ds_list_create();
+ds_list_add(direction_list, 'right', 'right', 'right');
 munitionsLoaded = 'round shot';
 range = 128;
 prevAction = 'none';
@@ -277,27 +279,35 @@ if(playerTurn &amp;&amp; !disableActions){
             <string>///Check for actions that end player turn
 if (playerTurn &amp;&amp; !disableActions) {
     if(keyboard_check_pressed(ord('W'))) {
+        ds_list_replace(direction_list, sail_speed-1, 'up');
         for( var i = 0; i &lt; sail_speed; i++ )
         {
-            move_player('up');
+            move_player(ds_list_find_value(direction_list, i));
+            ds_list_replace(direction_list, i, 'up');
         }
     }
     else if(keyboard_check_pressed(ord('A'))) {
+        ds_list_replace(direction_list, sail_speed-1, 'left');
         for( var i = 0; i &lt; sail_speed; i++ )
         {
-            move_player('left');
+            move_player(ds_list_find_value(direction_list, i));
+            ds_list_replace(direction_list, i, 'left');
         }
     }
     else if(keyboard_check_pressed(ord('S'))) {
+        ds_list_replace(direction_list, sail_speed-1, 'down');
         for( var i = 0; i &lt; sail_speed; i++ )
         {
-            move_player('down');
+            move_player(ds_list_find_value(direction_list, i));
+            ds_list_replace(direction_list, i, 'down');
         }
     }
     else if(keyboard_check_pressed(ord('D'))) {
+        ds_list_replace(direction_list, sail_speed-1, 'right');
         for( var i = 0; i &lt; sail_speed; i++ )
         {
-            move_player('right');
+            move_player(ds_list_find_value(direction_list, i));
+            ds_list_replace(direction_list, i, 'right');
         }
     }
     else if(keyboard_check_pressed(ord('Q')) &amp;&amp; (playerRiggingHealth &gt; 0)) {
