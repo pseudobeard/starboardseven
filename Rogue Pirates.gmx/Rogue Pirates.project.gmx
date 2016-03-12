@@ -71,6 +71,7 @@
       <object>objects\obj_Cursor</object>
       <object>objects\obj_Target</object>
     </objects>
+    <object>objects\obj_wave</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_gameArena</room>
