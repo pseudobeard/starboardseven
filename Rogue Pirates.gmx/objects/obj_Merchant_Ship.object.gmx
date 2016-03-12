@@ -41,12 +41,12 @@
             <kind>1</kind>
             <string>///Initial Setup
 //Starting Stats
-shipMaxHull = 5;
-shipHull = 5;
+shipMaxHull = 50;
+shipHull = 50;
 shipSpeed = 1;
 munitionsLoaded = 'unarmed';
-shipMaxRigging = 5;
-shipRigging = 5;
+shipMaxRigging = 50;
+shipRigging = 50;
 shipCrew = 30;
 shipRum = 10;
 shipGold = 10000;
