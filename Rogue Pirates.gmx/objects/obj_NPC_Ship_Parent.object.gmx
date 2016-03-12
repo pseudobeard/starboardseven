@@ -128,8 +128,8 @@ if(shipRigging &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>///Monitor Crew
-if(crewSize &lt; 0) {
-    crewSize = 0;
+if(shipCrew &lt; 0) {
+    shipCrew = 0;
 }
 </string>
           </argument>
