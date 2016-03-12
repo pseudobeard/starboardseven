@@ -1,20 +1,16 @@
-///move_player(str sail_direction, int sail_speed)
+///move_player(str sail_direction)
 sail_direction = argument0;
-sail_speed = argument1;
 
-var ss = sail_speed * 32;
+var ss = 32; 
 
-switch(sail_direction){
+switch( sail_direction){
     case 'up':
-        if(place_meeting(x, y - 32, obj_NPC_Ship_Parent)) {
-            //cannot make the move, try a different one.
+        if(place_meeting( x, y-32, obj_NPC_Ship_Parent)){
+            //cannot move
             ss = 0;
         } else {
-            for(var i = sail_speed; i > 0; i--) {
-                if(place_meeting(x, y - (32 * i), obj_NPC_Ship_Parent)){
-                    ss -= 32;
-                }
-            }
+            newWave = instance_create( x+16, y+16, obj_wave);
+            newWave.image_angle = -90;
             playerTurn = false;
         }
         y -= ss;
@@ -25,11 +21,7 @@ switch(sail_direction){
             //cannot make the move, try a different one.
             ss = 0;
         } else {
-            for(var i = sail_speed; i > 0; i--) {
-                if(place_meeting(x - (32 * i), y, obj_NPC_Ship_Parent)){
-                    ss -= 32;
-                }
-            }
+            newWave = instance_create( x+16, y+16, obj_wave);
             playerTurn = false;
         }
         x -= ss;
@@ -40,12 +32,9 @@ switch(sail_direction){
             //cannot make the move, try a different one.
             ss = 0;
         } else {
-            for(var i = sail_speed; i > 0; i--) {
-                if(place_meeting(x, y + (32 * i), obj_NPC_Ship_Parent)){
-                    ss -= 32;
-                }
-                playerTurn = false;
-            }
+            newWave = instance_create( x+16, y+16, obj_wave);
+            newWave.image_angle = 90;
+            playerTurn = false;
         }
         y += ss;
         image_index = 3;
@@ -55,12 +44,9 @@ switch(sail_direction){
             //cannot make the move, try a different one.
             ss = 0;
         } else {
-            for(var i = sail_speed; i > 0; i--) {
-                if(place_meeting(x + 64 + (32 * i), y, obj_NPC_Ship_Parent)){
-                    ss -= 32;
-                }
-                playerTurn = false;
-            }
+            newWave = instance_create( x+16, y+16, obj_wave);
+            newWave.image_xscale = -1;
+            playerTurn = false;
         }
         x += ss;
         image_index = 0;
