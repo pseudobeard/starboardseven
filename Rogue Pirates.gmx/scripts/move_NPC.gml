@@ -12,7 +12,7 @@ switch( sail_direction){
         } else {
             newWave = instance_create( x+16, y+16, obj_wave);
             newWave.image_angle = -90;
-            image_index = 3;
+            image_index = 2;
         }
         y -= ss;
         break;
@@ -35,7 +35,7 @@ switch( sail_direction){
         } else {
             newWave = instance_create( x+16, y+16, obj_wave);
             newWave.image_angle = 90;
-            image_index = 2;
+            image_index = 3;
         }
         y += ss;
         break;
