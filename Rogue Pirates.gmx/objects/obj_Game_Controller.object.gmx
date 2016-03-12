@@ -63,9 +63,9 @@ playerTurn = true;
 disableActions = false;
 
 //Player Ship Stats.
-playerMaxHull = 10;
+playerMaxHull = 100;
 playerHull = playerMaxHull;
-playerMaxRiggingHealth = 10;
+playerMaxRiggingHealth = 100;
 playerRiggingHealth = playerMaxRiggingHealth;
 playerCrew = 50;
 playerRum = 100;

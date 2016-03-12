@@ -51,9 +51,9 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>///end ai turn
-playerHull -= 1;
+playerHull -= random(5);
 if(instance_exists(obj_UI_Controller)) {
-    obj_AI_Controller.alarm[0] = 15;
+    obj_AI_Controller.alarm[0] = 10;
 }
 </string>
           </argument>

@@ -53,7 +53,7 @@ image_speed = 0;
             <string>///Reenable player actions, but also end turn
 disableActions = false;
 playerTurn = false;
-targetID.shipHull -= 2;
+targetID.shipHull -= random(10);
 </string>
           </argument>
         </arguments>

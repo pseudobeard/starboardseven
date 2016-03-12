@@ -133,6 +133,13 @@ switch(actionList) {
             draw_set_colour(c_gray);
             draw_text(530, secondItem, 'Q : Toggle Sails');
         }
+        if((playerHull/PlayerMaxHull) * 100 &lt; 40) {
+            draw_set_colour(c_white);
+            draw_text(530, thirdItem, 'R : Emergency Repair');
+        } else {
+            draw_set_colour(c_gray);
+            draw_text(530, thirdItem, 'R : Emergency Repair');
+        }
     break;
     case 'load':
         draw_text(530, firstItem, '1 : Round Shot');
@@ -156,6 +163,13 @@ switch(actionList) {
         } else {
             draw_set_colour(c_gray);
             draw_text(530, thirdItem, 'Q : Toggle Sails');
+        }
+        if((playerHull/PlayerMaxHull) * 100 &lt; 40) {
+            draw_set_colour(c_white);
+            draw_text(530, fourthItem, 'R : Emergency Repair');
+        } else {
+            draw_set_colour(c_gray);
+            draw_text(530, fourthItem, 'R : Emergency Repair');
         }
     break;
 }

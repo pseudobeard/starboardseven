@@ -12,7 +12,7 @@ if(instance_exists(ship) && ship.shipCrew > 0) {
             ship.munitionsLoaded = 'round shot';
             instance_create(x + 16, y + 16, obj_Enemy_Round_Shot);
          } else { 
-            obj_AI_Controller.alarm[0] = 15;
+            obj_AI_Controller.alarm[0] = 10;
             mp_grid_clear_rectangle(grid, x, y, x + 32, y + 32);
             if (instance_exists(obj_Player_Ship)){
                     var move1;
@@ -52,5 +52,5 @@ if(instance_exists(ship) && ship.shipCrew > 0) {
         }
     }
 } else {
-    obj_AI_Controller.alarm[0] = 15;
+    obj_AI_Controller.alarm[0] = 10;
 }
