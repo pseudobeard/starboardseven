@@ -28,7 +28,7 @@
             <string>///Initial Setup
 //Global variables to be used by other objects.
 globalvar grid, playerTurn, disableActions, playerMaxHull, playerHull,
-targetAquired, targetID, targetX, targetY,
+targetAquired, targetID, targetX, targetY, playerCrew,
 actionList, playerMaxRiggingHealth, playerRiggingHealth;
 
 //This is the grid that pathing is based on.
@@ -57,6 +57,7 @@ playerMaxHull = 10;
 playerHull = playerMaxHull;
 playerMaxRiggingHealth = 10;
 playerRiggingHealth = playerMaxRiggingHealth;
+playerCrew = 50;
 
 //Targetting Data
 targetAquired = false;
