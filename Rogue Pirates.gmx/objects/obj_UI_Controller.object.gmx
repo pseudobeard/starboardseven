@@ -104,6 +104,7 @@ draw_healthbar(776, 510, 961, 530, (playerRiggingHealth/playerMaxRiggingHealth) 
 draw_text(776, 550, 'Munitions Loaded:
             ' + string(obj_Player_Ship.munitionsLoaded));
 draw_circle(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, obj_Player_Ship.range + 16, true);
+draw_text(776, 600, 'Crew Size: ' + string(playerCrew));
 
 //Target Ship Stats
 if (targetAquired) {
@@ -113,6 +114,7 @@ if (targetAquired) {
     draw_healthbar(776, 140, 961, 160, (targetID.shipRigging/targetID.shipMaxRigging) * 100, c_gray, c_red, c_green, 0, 1, 0);
     draw_text(776, 180, 'Munitions Loaded:
             ' + string(targetID.munitionsLoaded));
+    draw_text(776, 230, 'Crew Size: ' + string(targetID.shipCrew));
 } else {
     draw_text(776, 60, "No Target");
 }

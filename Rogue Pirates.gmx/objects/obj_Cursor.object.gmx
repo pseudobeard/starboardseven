@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_index = 0;
 image_speed = 0;
-moved = false;
+moved = true;
 locking = false;
 </string>
           </argument>

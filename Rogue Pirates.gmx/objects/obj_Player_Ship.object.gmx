@@ -31,6 +31,49 @@ image_speed = 0;
 sail_speed = 3;
 munitionsLoaded = 'round shot';
 range = 128;
+prevAction = 'none';
+
+//Set up coin shot particle settings
+coinShotSystem = part_system_create();
+part_system_depth(coinShotSystem, -2);
+
+coinParts = part_type_create();
+part_type_shape(coinParts, pt_shape_flare);
+part_type_size(coinParts, 0.01, 0.1, 0, 0.05);
+part_type_scale(coinParts, 1, 1);
+part_type_colour1(coinParts, make_colour_rgb(255, 215, 0));
+part_type_alpha1(coinParts, 1);
+part_type_blend(coinParts, 0);
+part_type_life(coinParts, 10, 20);
+part_type_speed(coinParts, 3, 8, 0, 0);
+
+coinShotEmitter = part_emitter_create(coinShotSystem);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///End Turn After Coin Shot
+disableActions = false;
+playerTurn = false;
+targetID.shipHull -= 2;
 </string>
           </argument>
         </arguments>
@@ -174,22 +217,22 @@ if(playerTurn &amp;&amp; !disableActions){
                 case ord('1'):
                     munitionsLoaded = 'round shot'
                     range = 128;
-                    actionList = 'none';
+                    actionList = prevAction;
                 break;
                 case vk_numpad2:
                 case ord('2'):
                     munitionsLoaded = 'chain shot'
                     range = 96;
-                    actionList = 'none';
+                    actionList = prevAction;
                 break;
                 case vk_numpad3:
                 case ord('3'):
                     munitionsLoaded = 'coin shot'
                     range = 64;
-                    actionList = 'none';
+                    actionList = prevAction;
                 break;
                 case ord('B'):
-                    actionList = 'none';
+                    actionList = prevAction;
                 break;
             }
         break;
@@ -205,6 +248,7 @@ if(playerTurn &amp;&amp; !disableActions){
         break;
     }
     if(keyboard_check_pressed(ord('L'))) {
+        prevAction = actionList;
         actionList = 'load';
     }
 }

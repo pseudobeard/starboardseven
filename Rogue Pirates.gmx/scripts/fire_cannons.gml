@@ -8,3 +8,13 @@ if(ammo == 'round shot'){
 if(ammo == 'chain shot'){
     instance_create(x + 16, y + 16, obj_Chain_Shot);
 }
+if(ammo == 'coin shot'){
+    var xx = targetID.x + 16;
+    var yy = targetID.y + 16;
+    var dir = point_direction(x + 16, y + 16, xx, yy);
+    part_type_direction(coinParts, dir - 10, dir + 10, 0, 0);
+    part_emitter_region(coinShotSystem, coinShotEmitter, x, x, y, y, ps_shape_ellipse, ps_distr_linear);
+    part_emitter_burst(coinShotSystem, coinShotEmitter, coinParts, 50);
+    targetID.crewSize -= 10;
+    alarm[0] = 15;
+}
