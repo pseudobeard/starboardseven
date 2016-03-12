@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Initial Setup
 //Global variables to be used by other objects.
-globalvar grid, playerTurn, disableActions, playerMaxHull, playerHull,
+globalvar grid, tile_grid, enemy_grid, playerTurn, disableActions, playerMaxHull, playerHull,
 targetAquired, targetID, targetX, targetY, playerCrew, playerRum, playerGold,
 actionList, playerMaxRiggingHealth, playerRiggingHealth;
 
@@ -37,6 +37,16 @@ audio_play_sound(pirate_wav, 1, true);
 //This is the grid that pathing is based on.
 grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
 
+//This is the grid that proc-gen is based on
+tile_grid = ds_grid_create(22, 16);
+ds_grid_clear(tile_grid, 0);
+generate_islands(tile_grid);
+
+//This is the grid that enemy-generation is based on
+enemy_grid = ds_grid_create(22, 16);
+ds_grid_clear(enemy_grid, 0);
+generate_enemies(enemy_grid);
+
 //Camera setup.
 view_xview[0] = (room_width / 2) - (view_wview[0] / 2);
 view_yview[0] = (room_height / 2) - (view_yview[0] / 2);
@@ -44,9 +54,6 @@ view_yview[0] = (room_height / 2) - (view_yview[0] / 2);
 //Spawn the player ship.
 instance_create(view_xview[0] + 352, view_yview[0] + 256, obj_Player_Ship);
 
-//Spawn test enemy ships
-instance_create(view_xview[0] + 224, view_yview[0] + 128, obj_Royal_Ship);
-instance_create(view_xview[0] + 256, view_yview[0] + 160, obj_Royal_Ship);
 
 //Spawn test merchant ship
 instance_create(view_xview[0] + 352, view_yview[0] + 480, obj_Merchant_Ship);

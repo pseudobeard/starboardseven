@@ -38,6 +38,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\create_sector.gml</script>
+    <script>scripts\place_enemies.gml</script>
     <script>scripts\draw_grid.gml</script>
     <script>scripts\destroy_cursor.gml</script>
     <script>scripts\move_player.gml</script>
@@ -47,6 +48,8 @@
     <script>scripts\destroy_ship.gml</script>
     <script>scripts\move_royal_ship.gml</script>
     <script>scripts\move_NPC.gml</script>
+    <script>scripts\generate_islands.gml</script>
+    <script>scripts\generate_enemies.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\pirateFont</font>

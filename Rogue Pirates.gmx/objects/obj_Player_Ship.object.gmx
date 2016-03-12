@@ -98,7 +98,7 @@ targetID.shipHull -= 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Camera Follower
+            <string>///Refresh sector
 view_xview[0] = x - 352;
 view_yview[0] = y - 256;
 </string>
