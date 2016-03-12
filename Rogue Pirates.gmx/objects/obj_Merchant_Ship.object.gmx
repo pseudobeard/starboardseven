@@ -48,6 +48,8 @@ munitionsLoaded = 'unarmed';
 shipMaxRigging = 5;
 shipRigging = 5;
 shipCrew = 30;
+shipRum = 10;
+shipGold = 10000;
 </string>
           </argument>
         </arguments>

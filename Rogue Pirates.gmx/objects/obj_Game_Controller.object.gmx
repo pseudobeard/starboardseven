@@ -28,8 +28,11 @@
             <string>///Initial Setup
 //Global variables to be used by other objects.
 globalvar grid, playerTurn, disableActions, playerMaxHull, playerHull,
-targetAquired, targetID, targetX, targetY, playerCrew,
+targetAquired, targetID, targetX, targetY, playerCrew, playerRum, playerGold,
 actionList, playerMaxRiggingHealth, playerRiggingHealth;
+
+//Start music
+audio_play_sound(pirate_wav, 1, true);
 
 //This is the grid that pathing is based on.
 grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
@@ -58,36 +61,14 @@ playerHull = playerMaxHull;
 playerMaxRiggingHealth = 10;
 playerRiggingHealth = playerMaxRiggingHealth;
 playerCrew = 50;
+playerRum = 100;
+playerGold = 500000;
 
 //Targetting Data
 targetAquired = false;
 
 actionList = 'none';
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>pirate_wav</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>1</string>
           </argument>
         </arguments>
       </action>

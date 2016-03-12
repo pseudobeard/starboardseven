@@ -1,6 +1,6 @@
 ///execute_merchant_ship_ai(int instance_id);
 ship = argument0;
-if(instance_exists(ship)) {
+if(instance_exists(ship) && ship.shipCrew > 0) {
     with(ship) {
         obj_AI_Controller.alarm[0] = 15;
         mp_grid_clear_rectangle(grid, x, y, x + 32, y + 32);
@@ -48,4 +48,6 @@ if(instance_exists(ship)) {
                 }
         }
     }   
+} else {
+    obj_AI_Controller.alarm[0] = 15;
 }

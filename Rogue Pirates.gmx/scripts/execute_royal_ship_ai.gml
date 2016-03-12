@@ -1,6 +1,6 @@
 ///execute_royal_ship_ai(int instance_id);
 ship = argument0;
-if(instance_exists(ship)) {
+if(instance_exists(ship) && ship.shipCrew > 0) {
     with(ship) {
         //Move Ship or shoot
         var roundRange = 128;
@@ -43,4 +43,6 @@ if(instance_exists(ship)) {
             }
         }
     }
+} else {
+    obj_AI_Controller.alarm[0] = 15;
 }

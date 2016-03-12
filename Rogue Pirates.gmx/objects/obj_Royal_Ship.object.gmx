@@ -49,6 +49,8 @@ munitionsLoaded = 'round shot';
 shipMaxRigging = 10;
 shipRigging = 10;
 shipCrew = 75;
+shipRum = 50;
+shipGold = 1000;
 </string>
           </argument>
         </arguments>
