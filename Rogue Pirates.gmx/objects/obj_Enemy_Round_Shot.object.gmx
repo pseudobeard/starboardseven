@@ -3,7 +3,7 @@
   <spriteName>spr_Smooth_Shot</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -50,10 +50,11 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Reenable player actions, but also end turn
-disableActions = false;
-playerTurn = false;
-targetID.shipHull -= 2;
+            <string>///end ai turn
+playerHull -= 1;
+if(instance_exists(obj_UI_Controller)) {
+    obj_AI_Controller.alarm[0] = 15;
+}
 </string>
           </argument>
         </arguments>
@@ -77,10 +78,12 @@ targetID.shipHull -= 2;
           <argument>
             <kind>1</kind>
             <string>///Move Cannon Ball
-mp_linear_step(targetX + 16, targetY + 16, 5, false);
-if(place_meeting(x, y, obj_NPC_Ship_Parent)) {
-    effect_create_above(ef_explosion, x, y, 1, c_red);
-    instance_destroy();
+if(instance_exists(obj_Player_Ship)) {
+    mp_linear_step(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, 5, false);
+    if(place_meeting(x, y, obj_Player_Ship)) {
+        effect_create_above(ef_explosion, x, y, 1, c_red);
+        instance_destroy();
+    }
 }
 </string>
           </argument>

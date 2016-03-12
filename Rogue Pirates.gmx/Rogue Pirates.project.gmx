@@ -59,6 +59,9 @@
       <objects name="gobj_Munitions">
         <object>objects\obj_Round_Shot</object>
       </objects>
+      <objects name="gobj_Enemy_Munitions">
+        <object>objects\obj_Enemy_Round_Shot</object>
+      </objects>
     </objects>
     <objects name="gobj_UI">
       <object>objects\obj_Cursor</object>

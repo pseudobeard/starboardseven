@@ -28,6 +28,7 @@
             <string>//Values for mouse position in the screen space.
 xx = 0;
 yy = 0;
+inRange = false;
 </string>
           </argument>
         </arguments>
@@ -106,8 +107,16 @@ if (targetAquired) {
 //Actions
 switch(actionList) {
     case 'enemy':
-        draw_text(530, 574, 'F : Fire Cannons');
-        draw_text(530, 594, 'L : Load Munitions');
+        if(inRange) {
+            draw_set_colour(c_white);
+            draw_text(530, 574, 'F : Fire Cannons');
+            draw_text(530, 594, 'L : Load Munitions');
+        } else {
+            draw_set_colour(c_gray);
+            draw_text(530, 574, 'F : Fire Cannons');
+            draw_set_colour(c_white);
+            draw_text(530, 594, 'L : Load Munitions');
+        }
     break;
 }
 </string>

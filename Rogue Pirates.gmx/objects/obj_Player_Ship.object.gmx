@@ -30,6 +30,7 @@ image_index = 0;
 image_speed = 0;
 sail_speed = 3;
 munitionsLoaded = 'round shot';
+range = 128;
 </string>
           </argument>
         </arguments>
@@ -60,6 +61,32 @@ view_yview[0] = y - 256;
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Game Over
+if(playerHull &lt;= 0){
+    game_end();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -78,7 +105,7 @@ view_yview[0] = y - 256;
           <argument>
             <kind>1</kind>
             <string>///Targetting
-if(!disableActions) {
+if(!disableActions &amp;&amp; playerTurn) {
     if(!instance_exists(obj_Cursor) &amp;&amp; !instance_exists(obj_Target)) {
         if(keyboard_check_pressed(vk_left)) {
             instance_create(x - 32, y, obj_Cursor);
@@ -130,8 +157,13 @@ if(!disableActions) {
 if(playerTurn &amp;&amp; !disableActions){
     switch(actionList){
         case 'enemy':
-            if(keyboard_check_pressed(ord('F'))) {
-                fire_cannons(munitionsLoaded);
+            if(distance_to_object(targetID) &lt;= range){
+                obj_UI_Controller.inRange = true;
+                if(keyboard_check_pressed(ord('F'))) {
+                    fire_cannons(munitionsLoaded);
+                }
+            } else {
+                obj_UI_Controller.inRange = false;
             }
         break;
     }

@@ -50,6 +50,10 @@ image_speed = 0;
           <argument>
             <kind>1</kind>
             <string>///Move Cursor
+if(!playerTurn) {
+    instance_destroy();
+}
+
 if(keyboard_check_pressed(vk_left)) {
     x -= 32;
 }
