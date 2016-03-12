@@ -2,6 +2,7 @@
 ship = argument0;
 if(instance_exists(ship)) {
     with(ship) {
+        obj_AI_Controller.alarm[0] = 30;
         mp_grid_clear_rectangle(grid, x, y, x + 32, y + 32);
         var xx = 0;
         var yy = 0;

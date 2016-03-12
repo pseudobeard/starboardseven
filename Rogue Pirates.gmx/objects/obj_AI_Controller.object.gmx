@@ -8,6 +8,77 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>aiTurnsLeft = false;
+royalShipCount = 0;
+merchantShipCount = 0;
+npcShip = 0;
+npcLength = 0;
+npcTurn = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Execute an AI's turn, or end the round.
+
+if(npcTurn &lt; npcLength) {
+    var currentNPC = npcShip[npcTurn];
+    if(instance_exists(currentNPC)){
+        with(currentNPC){
+            var obj_name = object_get_name(object_index);
+            if(obj_name == 'obj_Royal_Ship') {
+                execute_royal_ship_ai(currentNPC);
+            } else if(obj_name == 'obj_Merchant_Ship'){
+                execute_merchant_ship_ai(currentNPC);
+            }
+        }
+    }
+    npcTurn += 1;
+} else {
+    aiTurnsLeft = false;
+    playerTurn = true;
+    npcLength = 0;
+    npcTurn = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -27,21 +98,20 @@
             <kind>1</kind>
             <string>///AI Handler
 
-if (!playerTurn){
+if (!playerTurn &amp;&amp; !aiTurnsLeft){
+    aiTurnsLeft = true;
     var ship;
     var i;
-    var royalShipCount = instance_number(obj_Royal_Ship);
-    var merchantShipCount = instance_number(obj_Merchant_Ship);
+    royalShipCount = instance_number(obj_Royal_Ship);
+    merchantShipCount = instance_number(obj_Merchant_Ship);
     for(i = 0; i &lt; royalShipCount; i++) {
-        ship = instance_find(obj_Royal_Ship, i);
-        execute_royal_ship_ai(ship);
+        npcShip[i] = instance_find(obj_Royal_Ship, i);
     }
     for(i = 0; i &lt; merchantShipCount; i++) {
-        ship = instance_find(obj_Merchant_Ship, i);
-        execute_royal_ship_ai(ship);
+        npcShip[i + (royalShipCount)] = instance_find(obj_Merchant_Ship, i);
     }
-    
-    playerTurn = true;
+    npcLength = array_length_1d(npcShip);
+    alarm[0] = 30;
 }
 </string>
           </argument>
