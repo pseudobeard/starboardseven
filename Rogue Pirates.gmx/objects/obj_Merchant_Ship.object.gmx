@@ -44,6 +44,9 @@
 shipMaxHull = 5;
 shipHull = 5;
 shipSpeed = 1;
+munitionsLoaded = 'unarmed';
+shipMaxRigging = 5;
+shipRigging = 5;
 </string>
           </argument>
         </arguments>

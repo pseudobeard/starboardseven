@@ -20,6 +20,7 @@
       <sprite>sprites\spr_Merchant_Ship</sprite>
       <sprites name="gspr_Munitions">
         <sprite>sprites\spr_Smooth_Shot</sprite>
+        <sprite>sprites\spr_Chain_Shot</sprite>
       </sprites>
     </sprites>
     <sprites name="gspr_Environment">
@@ -58,9 +59,11 @@
       <object>objects\obj_Merchant_Ship</object>
       <objects name="gobj_Munitions">
         <object>objects\obj_Round_Shot</object>
+        <object>objects\obj_Chain_Shot</object>
       </objects>
       <objects name="gobj_Enemy_Munitions">
         <object>objects\obj_Enemy_Round_Shot</object>
+        <object>objects\obj_Enemy_Chain_Shot</object>
       </objects>
     </objects>
     <objects name="gobj_UI">

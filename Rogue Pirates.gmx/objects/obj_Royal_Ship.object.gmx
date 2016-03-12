@@ -45,6 +45,9 @@ shipMaxHull = 10;
 shipHull = 10;
 shipSpeed = 2;
 range = 128;
+munitionsLoaded = 'round shot';
+shipMaxRigging = 10;
+shipRigging = 10;
 </string>
           </argument>
         </arguments>

@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>///Initial Setup
 //Global variables to be used by other objects.
-globalvar grid, playerTurn, disableActions, playerMaxHull, playerHull, targetShipMaxHull,
-targetShipHull, targetShipSpeed, targetAquired, targetID, targetX, targetY,
-actionList;
+globalvar grid, playerTurn, disableActions, playerMaxHull, playerHull,
+targetAquired, targetID, targetX, targetY,
+actionList, playerMaxRiggingHealth, playerRiggingHealth;
 
 //This is the grid that pathing is based on.
 grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
@@ -54,15 +54,12 @@ disableActions = false;
 
 //Player Ship Stats.
 playerMaxHull = 10;
-playerHull = 10;
+playerHull = playerMaxHull;
+playerMaxRiggingHealth = 10;
+playerRiggingHealth = playerMaxRiggingHealth;
 
 //Targetting Data
 targetAquired = false;
-
-//Target Ship Stats.
-targetShipMaxHull = 0;
-targetShipHull = 0;
-targetShipSpeed = 0;
 
 actionList = 'none';
 </string>

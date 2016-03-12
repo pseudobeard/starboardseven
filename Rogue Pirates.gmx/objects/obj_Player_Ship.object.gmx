@@ -86,6 +86,30 @@ if(playerHull &lt;= 0){
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Rigging Health
+if(playerRiggingHealth &lt;= 0) {
+    sail_speed = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -120,18 +144,6 @@ if(!disableActions &amp;&amp; playerTurn) {
             instance_create(x, y + 32, obj_Cursor);
         }
     }
-    
-    //This actionList variable controls what the UI displays as well as
-    //what they key presses do.
-    if(targetAquired) {
-        if(object_get_name(targetID.object_index) == 'obj_Royal_Ship') {
-            actionList = 'enemy';
-        } else if(object_get_name(targetID.object_index) == 'obj_Merchant_Ship') {
-            actionList = 'merchant';
-        }
-    } else {
-        actionList = 'none';
-    }
 }
 </string>
           </argument>
@@ -156,6 +168,31 @@ if(!disableActions &amp;&amp; playerTurn) {
             <string>///Take Actions
 if(playerTurn &amp;&amp; !disableActions){
     switch(actionList){
+        case 'load':
+            switch(keyboard_key){
+                case vk_numpad1:
+                case ord('1'):
+                    munitionsLoaded = 'round shot'
+                    range = 128;
+                    actionList = 'none';
+                break;
+                case vk_numpad2:
+                case ord('2'):
+                    munitionsLoaded = 'chain shot'
+                    range = 96;
+                    actionList = 'none';
+                break;
+                case vk_numpad3:
+                case ord('3'):
+                    munitionsLoaded = 'coin shot'
+                    range = 64;
+                    actionList = 'none';
+                break;
+                case ord('B'):
+                    actionList = 'none';
+                break;
+            }
+        break;
         case 'enemy':
             if(distance_to_object(targetID) &lt;= range){
                 obj_UI_Controller.inRange = true;
@@ -166,6 +203,9 @@ if(playerTurn &amp;&amp; !disableActions){
                 obj_UI_Controller.inRange = false;
             }
         break;
+    }
+    if(keyboard_check_pressed(ord('L'))) {
+        actionList = 'load';
     }
 }
 </string>
@@ -204,11 +244,10 @@ if (playerTurn &amp;&amp; !disableActions) {
     else if(keyboard_check_pressed(ord('D'))) {
         move_player('right', sail_speed);
     }
-    else if(keyboard_check_pressed(ord('Q'))) {
-        if sail_speed = 3{
+    else if(keyboard_check_pressed(ord('Q')) &amp;&amp; (playerRiggingHealth &gt; 0)) {
+        if (sail_speed = 3) {
             sail_speed = 1;
-        }
-        else{
+        } else {
             sail_speed = 3;
         }
     }

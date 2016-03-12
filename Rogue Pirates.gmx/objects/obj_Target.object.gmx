@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>image_index = 0;
 image_speed = 0;
-
 targetID = instance_place(x, y, obj_NPC_Ship_Parent);
 targetID.locked = true;
 targetAquired = true;
@@ -57,13 +56,11 @@ targetAquired = true;
 if(instance_exists(targetID)) {
     targetID.locked = false;
 }
-targetShipMaxHull = 0;
-targetShipHull = 0;
-targetShipSpeed = 0;
 targetID = 0;
 targetX = 0;
 targetY = 0;
 targetAquired = false;
+actionList = 'none';
 </string>
           </argument>
         </arguments>
@@ -87,10 +84,6 @@ targetAquired = false;
           <argument>
             <kind>1</kind>
             <string>///Target Behaviors
-//Render stats of locked target.
-targetShipMaxHull = targetID.shipMaxHull;
-targetShipHull = targetID.shipHull;
-targetShipSpeed = targetID.shipSpeed;
 
 //If user hits the backspace key, it break lock and
 //doesn't spawn a cursor.
@@ -120,8 +113,8 @@ if(keyboard_check_pressed(vk_down)) {
     targetID.locked = false;
 }
 
-targetX = x;
-targetY = y;
+targetID.x = x;
+targetID.y = y;
 </string>
           </argument>
         </arguments>

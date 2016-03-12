@@ -3,7 +3,13 @@ ship = argument0;
 if(instance_exists(ship)) {
     with(ship) {
         //Move Ship or shoot
-        if(distance_to_object(obj_Player_Ship) <= range) {
+        var roundRange = 128;
+        var chainRange = 96;
+        if(distance_to_object(obj_Player_Ship) <= chainRange) {
+            ship.munitionsLoaded = 'chain shot';
+            instance_create(x + 16, y + 16, obj_Enemy_Chain_Shot);
+        } else if(distance_to_object(obj_Player_Ship) <= roundRange) {
+            ship.munitionsLoaded = 'round shot';
             instance_create(x + 16, y + 16, obj_Enemy_Round_Shot);
         } else {
             obj_AI_Controller.alarm[0] = 15;

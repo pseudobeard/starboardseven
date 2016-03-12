@@ -29,6 +29,10 @@
 xx = 0;
 yy = 0;
 inRange = false;
+firstItem = 574;
+secondItem = 594;
+thirdItem = 614;
+forthItem = 634;
 </string>
           </argument>
         </arguments>
@@ -93,32 +97,74 @@ draw_text(10, 10, xx);
 draw_text(100, 10, yy);
 
 //Player Ship Stats
-draw_text(776, 432, "Hull Integrity:   " + string(playerHull));
-draw_healthbar(776, 462, 961, 482, (playerHull/playerMaxHull) * 100, c_gray, c_red, c_green, 0, 1, 0);
+draw_text(776, 430, "Hull Integrity:   " + string(playerHull));
+draw_healthbar(776, 450, 961, 470, (playerHull/playerMaxHull) * 100, c_gray, c_red, c_green, 0, 1, 0);
+draw_text(776, 490, "Rigging Condition:   " + string(playerRiggingHealth));
+draw_healthbar(776, 510, 961, 530, (playerRiggingHealth/playerMaxRiggingHealth) * 100, c_gray, c_red, c_green, 0, 1, 0);
+draw_text(776, 550, 'Munitions Loaded:
+            ' + string(obj_Player_Ship.munitionsLoaded));
+draw_circle(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, obj_Player_Ship.range + 16, true);
 
 //Target Ship Stats
 if (targetAquired) {
-    draw_text(776, 60, "Hull Integrity:   " + string(targetShipHull));
-    draw_healthbar(776, 90, 961, 110, (targetShipHull/targetShipMaxHull) * 100, c_gray, c_red, c_green, 0, 1, 0);
+    draw_text(776, 60, "Hull Integrity:   " + string(targetID.shipHull));
+    draw_healthbar(776, 80, 961, 100, (targetID.shipHull/targetID.shipMaxHull) * 100, c_gray, c_red, c_green, 0, 1, 0);
+    draw_text(776, 120, "Rigging Condition:   " + string(targetID.shipRigging));
+    draw_healthbar(776, 140, 961, 160, (targetID.shipRigging/targetID.shipMaxRigging) * 100, c_gray, c_red, c_green, 0, 1, 0);
+    draw_text(776, 180, 'Munitions Loaded:
+            ' + string(targetID.munitionsLoaded));
 } else {
     draw_text(776, 60, "No Target");
 }
 
 //Actions
 switch(actionList) {
+    case 'none':
+        draw_text(530, firstItem, 'L : Load Munitions');
+    break;
+    case 'load':
+        draw_text(530, firstItem, '1 : Round Shot');
+        draw_text(530, secondItem, '2 : Chain Shot');
+        draw_text(530, thirdItem, '3 : Coin Shot');
+        draw_text(530, forthItem, 'B : Back');
+    break;
     case 'enemy':
         if(inRange) {
             draw_set_colour(c_white);
-            draw_text(530, 574, 'F : Fire Cannons');
-            draw_text(530, 594, 'L : Load Munitions');
+            draw_text(530, firstItem, 'F : Fire Cannons');
+            draw_text(530, secondItem, 'L : Load Munitions');
         } else {
             draw_set_colour(c_gray);
-            draw_text(530, 574, 'F : Fire Cannons');
+            draw_text(530, firstItem, 'F : Fire Cannons');
             draw_set_colour(c_white);
-            draw_text(530, 594, 'L : Load Munitions');
+            draw_text(530, secondItem, 'L : Load Munitions');
         }
     break;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Cannon Range
+draw_circle(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, obj_Player_Ship.range + 16, true);
 </string>
           </argument>
         </arguments>
