@@ -121,6 +121,12 @@ if (targetAquired) {
 switch(actionList) {
     case 'none':
         draw_text(530, firstItem, 'L : Load Munitions');
+        if(playerRiggingHealth &gt; 0) {
+            draw_text(530, secondItem, 'Q : Toggle Sails');
+        } else {
+            draw_set_colour(c_gray);
+            draw_text(530, secondItem, 'Q : Toggle Sails');
+        }
     break;
     case 'load':
         draw_text(530, firstItem, '1 : Round Shot');
@@ -138,6 +144,12 @@ switch(actionList) {
             draw_text(530, firstItem, 'F : Fire Cannons');
             draw_set_colour(c_white);
             draw_text(530, secondItem, 'L : Load Munitions');
+        }
+        if(playerRiggingHealth &gt; 0) {
+            draw_text(530, thirdItem, 'Q : Toggle Sails');
+        } else {
+            draw_set_colour(c_gray);
+            draw_text(530, thirdItem, 'Q : Toggle Sails');
         }
     break;
 }

@@ -5,7 +5,7 @@ if(instance_exists(ship)) {
         //Move Ship or shoot
         var roundRange = 128;
         var chainRange = 96;
-        if(distance_to_object(obj_Player_Ship) <= chainRange) {
+        if((distance_to_object(obj_Player_Ship) <= chainRange) && (playerRiggingHealth > 0)) {
             ship.munitionsLoaded = 'chain shot';
             instance_create(x + 16, y + 16, obj_Enemy_Chain_Shot);
         } else if(distance_to_object(obj_Player_Ship) <= roundRange) {

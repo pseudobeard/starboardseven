@@ -16,6 +16,7 @@
     </sprites>
     <sprites name="gspr_Ships">
       <sprite>sprites\spr_Player_Ship</sprite>
+      <sprite>sprites\spr_Player_Ship_Sails_Down</sprite>
       <sprite>sprites\spr_Royal_Ship</sprite>
       <sprite>sprites\spr_Merchant_Ship</sprite>
       <sprites name="gspr_Munitions">
