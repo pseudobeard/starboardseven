@@ -106,7 +106,7 @@ draw_text(776, 550, 'Munitions Loaded:
 draw_circle(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, obj_Player_Ship.range + 16, true);
 draw_text(776, 600, 'Crew Size: ' + string(playerCrew));
 draw_text(776, 620, 'Rum: ' + string(playerRum));
-draw_text(776, 620, 'Gold: ' + string(playerGold));
+draw_text(776, 640, 'Gold: ' + string(playerGold));
 
 //Target Ship Stats
 if (targetAquired) {
