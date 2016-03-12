@@ -150,6 +150,7 @@ if((playerHull &lt;= 0) || (playerCrew &lt;= 0)){
             <string>///Rigging Health
 if(playerRiggingHealth &lt;= 0) {
     sail_speed = 0;
+    playerRiggingHealth = 0;
 }
 </string>
           </argument>

@@ -32,7 +32,7 @@ targetAquired, targetID, targetX, targetY, playerCrew, playerRum, playerGold,
 actionList, playerMaxRiggingHealth, playerRiggingHealth;
 
 //Start music
-audio_play_sound(pirate_wav, 1, true);
+//audio_play_sound(pirate_wav, 1, true);
 
 //This is the grid that pathing is based on.
 //grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
