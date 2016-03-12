@@ -35,7 +35,7 @@ actionList, playerMaxRiggingHealth, playerRiggingHealth;
 audio_play_sound(pirate_wav, 1, true);
 
 //This is the grid that pathing is based on.
-grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
+//grid = mp_grid_create(-16, -16, room_width / 32, room_height / 32, 32, 32);
 
 //This is the grid that proc-gen is based on
 tile_grid = ds_grid_create(22, 16);

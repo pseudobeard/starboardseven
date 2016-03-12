@@ -13,8 +13,8 @@ if(ammo == 'round shot'){
     part_type_direction(coinParts, dir - 10, dir + 10, 0, 0);
     part_emitter_region(coinShotSystem, coinShotEmitter, x, x, y, y, ps_shape_ellipse, ps_distr_linear);
     part_emitter_burst(coinShotSystem, coinShotEmitter, coinParts, 50);
-    targetID.crewSize -= 10;
-    targetID.gold += 50;
-    playerGold -= 100;
+    targetID.crewSize -= floor(random(30));
+    targetID.gold += floor(random(75));
+    playerGold -= floor(random(150));
     alarm[0] = 15;
 }

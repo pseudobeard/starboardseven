@@ -32,7 +32,7 @@ inRange = false;
 firstItem = 574;
 secondItem = 594;
 thirdItem = 614;
-forthItem = 634;
+fourthItem = 634;
 </string>
           </argument>
         </arguments>
@@ -133,19 +133,19 @@ switch(actionList) {
             draw_set_colour(c_gray);
             draw_text(530, secondItem, 'Q : Toggle Sails');
         }
-        if((playerHull/PlayerMaxHull) * 100 &lt; 40) {
+        if((playerHull/playerMaxHull) * 100 &lt; 40) {
             draw_set_colour(c_white);
-            draw_text(530, thirdItem, 'R : Emergency Repair');
+            draw_text(530, thirdItem, 'R : Repair');
         } else {
             draw_set_colour(c_gray);
-            draw_text(530, thirdItem, 'R : Emergency Repair');
+            draw_text(530, thirdItem, 'R : Repair');
         }
     break;
     case 'load':
         draw_text(530, firstItem, '1 : Round Shot');
         draw_text(530, secondItem, '2 : Chain Shot');
         draw_text(530, thirdItem, '3 : Coin Shot');
-        draw_text(530, forthItem, 'B : Back');
+        draw_text(530, fourthItem, 'B : Back');
     break;
     case 'enemy':
         if(inRange) {
@@ -164,12 +164,12 @@ switch(actionList) {
             draw_set_colour(c_gray);
             draw_text(530, thirdItem, 'Q : Toggle Sails');
         }
-        if((playerHull/PlayerMaxHull) * 100 &lt; 40) {
+        if((playerHull/playerMaxHull) * 100 &lt; 40) {
             draw_set_colour(c_white);
-            draw_text(530, fourthItem, 'R : Emergency Repair');
+            draw_text(530, fourthItem, 'R : Repair');
         } else {
             draw_set_colour(c_gray);
-            draw_text(530, fourthItem, 'R : Emergency Repair');
+            draw_text(530, fourthItem, 'R : Repair');
         }
     break;
 }

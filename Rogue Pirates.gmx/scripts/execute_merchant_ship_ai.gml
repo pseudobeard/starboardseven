@@ -3,7 +3,6 @@ ship = argument0;
 if(instance_exists(ship) && ship.shipCrew > 0) {
     with(ship) {
         obj_AI_Controller.alarm[0] = 10;
-        mp_grid_clear_rectangle(grid, x, y, x + 32, y + 32);
         var xx = 0;
         var yy = 0;
         var path_planning_steps_ahead = 5;

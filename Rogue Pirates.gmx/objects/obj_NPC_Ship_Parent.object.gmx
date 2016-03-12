@@ -31,7 +31,6 @@ image_speed = 0;
 xxp = 0;
 yyp = 0;
 locked = false;
-mp_grid_add_rectangle(grid, x, y, x + 32, y + 32);
 </string>
           </argument>
         </arguments>
