@@ -105,6 +105,8 @@ draw_text(776, 550, 'Munitions Loaded:
             ' + string(obj_Player_Ship.munitionsLoaded));
 draw_circle(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, obj_Player_Ship.range + 16, true);
 draw_text(776, 600, 'Crew Size: ' + string(playerCrew));
+draw_text(776, 620, 'Rum: ' + string(playerRum));
+draw_text(776, 640, 'Gold: ' + string(playerGold));
 
 //Target Ship Stats
 if (targetAquired) {
@@ -115,6 +117,8 @@ if (targetAquired) {
     draw_text(776, 180, 'Munitions Loaded:
             ' + string(targetID.munitionsLoaded));
     draw_text(776, 230, 'Crew Size: ' + string(targetID.shipCrew));
+    draw_text(776, 250, 'Rum: ' + string(targetID.shipRum));
+    draw_text(776, 270, 'Gold: ' + string(targetID.shipGold));
 } else {
     draw_text(776, 60, "No Target");
 }

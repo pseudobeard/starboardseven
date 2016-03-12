@@ -4,11 +4,9 @@ ammo = argument0;
 disableActions = true;
 if(ammo == 'round shot'){
     instance_create(x + 16, y + 16, obj_Round_Shot);
-}
-if(ammo == 'chain shot'){
+} else if(ammo == 'chain shot'){
     instance_create(x + 16, y + 16, obj_Chain_Shot);
-}
-if(ammo == 'coin shot'){
+} else if(ammo == 'coin shot'){
     var xx = targetID.x + 16;
     var yy = targetID.y + 16;
     var dir = point_direction(x + 16, y + 16, xx, yy);
@@ -16,5 +14,7 @@ if(ammo == 'coin shot'){
     part_emitter_region(coinShotSystem, coinShotEmitter, x, x, y, y, ps_shape_ellipse, ps_distr_linear);
     part_emitter_burst(coinShotSystem, coinShotEmitter, coinParts, 50);
     targetID.crewSize -= 10;
+    targetID.gold += 50;
+    playerGold -= 100;
     alarm[0] = 15;
 }

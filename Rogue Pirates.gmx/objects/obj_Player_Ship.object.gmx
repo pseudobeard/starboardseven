@@ -124,7 +124,7 @@ view_yview[0] = y - 256;
           <argument>
             <kind>1</kind>
             <string>///Game Over
-if(playerHull &lt;= 0){
+if((playerHull &lt;= 0) || (playerCrew &lt;= 0)){
     game_end();
 }
 </string>
