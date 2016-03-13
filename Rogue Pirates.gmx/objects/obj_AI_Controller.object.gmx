@@ -59,11 +59,21 @@ if(npcTurn &lt; npcLength) {
     var currentNPC = npcShip[npcTurn];
     if(instance_exists(currentNPC)){
         with(currentNPC){
-            var obj_name = object_get_name(object_index);
-            if(obj_name == 'obj_Royal_Ship') {
-                execute_royal_ship_ai(currentNPC);
-            } else if(obj_name == 'obj_Merchant_Ship'){
-                execute_merchant_ship_ai(currentNPC);
+            //If player gets close enough, activate.
+            if(distance_to_object(obj_Player_Ship) &lt;= 128) {
+                activated = true;
+            }
+            
+            //If the NPC has been activated, it will forever do its thing.
+            if(activated) {
+                var obj_name = object_get_name(object_index);
+                if(obj_name == 'obj_Royal_Ship') {
+                    execute_royal_ship_ai(currentNPC);
+                } else if(obj_name == 'obj_Merchant_Ship'){
+                    execute_merchant_ship_ai(currentNPC);
+                }
+            } else {
+                obj_AI_Controller.alarm[0] = 1;
             }
         }
     }
