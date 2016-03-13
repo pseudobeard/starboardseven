@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>//Test sector
-create_sector(view_xview[0], view_yview[0]);
-place_enemies(view_xview[0], view_yview[0]);
+create_sector();
+//place_enemies(view_xview[0], view_yview[0]);
 
 //Ocean Particles
 oceanSystem = part_system_create();

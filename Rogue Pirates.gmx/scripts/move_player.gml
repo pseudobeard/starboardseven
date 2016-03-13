@@ -11,7 +11,6 @@ switch( sail_direction){
         } else {
             newWave = instance_create( x+16, y+16, obj_wave);
             newWave.image_angle = -90;
-            playerTurn = false;
         }
         y -= ss;
         image_index = 2;
@@ -22,7 +21,6 @@ switch( sail_direction){
             ss = 0;
         } else {
             newWave = instance_create( x+16, y+16, obj_wave);
-            playerTurn = false;
         }
         x -= ss;
         image_index = 1;
@@ -34,7 +32,6 @@ switch( sail_direction){
         } else {
             newWave = instance_create( x+16, y+16, obj_wave);
             newWave.image_angle = 90;
-            playerTurn = false;
         }
         y += ss;
         image_index = 3;
@@ -46,10 +43,10 @@ switch( sail_direction){
         } else {
             newWave = instance_create( x+16, y+16, obj_wave);
             newWave.image_xscale = -1;
-            playerTurn = false;
         }
         x += ss;
         image_index = 0;
         break;
 }
 destroy_cursor();
+//playerTurn=false;
