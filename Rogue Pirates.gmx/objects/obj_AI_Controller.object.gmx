@@ -54,7 +54,6 @@ npcTurn = 0;
           <argument>
             <kind>1</kind>
             <string>///Execute an AI's turn, or end the round.
-
 if(npcTurn &lt; npcLength) {
     var currentNPC = npcShip[npcTurn];
     if(instance_exists(currentNPC)){

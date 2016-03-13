@@ -43,7 +43,7 @@ ds_grid_clear(tile_grid, 0);
 generate_islands(tile_grid);
 
 //This is the grid that enemy-generation is based on
-enemy_grid = ds_grid_create(room_width / 32, room_height / 32);
+enemy_grid = ds_grid_create(22, 16);
 ds_grid_clear(enemy_grid, 0);
 generate_enemies(enemy_grid);
 

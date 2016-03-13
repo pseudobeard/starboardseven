@@ -31,6 +31,7 @@
     <sprites name="gspr_Environment">
       <sprite>sprites\spr_Ocean_Wave</sprite>
       <sprite>sprites\spr_Desert_Island</sprite>
+      <sprite>sprites\spr_Wreckage</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -87,6 +88,7 @@
     <objects name="gobj_Environment">
       <object>objects\obj_wave</object>
       <object>objects\obj_Desert_Island</object>
+      <object>objects\obj_Wreckage</object>
     </objects>
   </objects>
   <rooms name="rooms">
