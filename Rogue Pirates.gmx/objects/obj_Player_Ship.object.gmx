@@ -248,18 +248,6 @@ if(playerTurn &amp;&amp; !disableActions){
             } else {
                 obj_UI_Controller.inRange = false;
             }
-            if(keyboard_check_pressed(ord('R'))) {
-                if((playerHull/playerMaxHull) * 100 &lt; 40){
-                    //repair
-                }
-            }
-        break;
-        case 'none':
-            if(keyboard_check_pressed(ord('R'))) {
-                if((playerHull/playerMaxHull) * 100 &lt; 40){
-                    //repair
-                }
-            }
         break;
     }
     if(keyboard_check_pressed(ord('L'))) {

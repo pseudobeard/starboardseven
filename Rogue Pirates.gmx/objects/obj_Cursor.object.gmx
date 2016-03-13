@@ -110,7 +110,7 @@ if(moved){
         targetY = y;
         if(instance_place(x, y, obj_Merchant_Ship)) {
             image_index = 1;
-            actionList = 'merchant';
+            actionList = 'enemy';
         } else if(instance_place(x, y, obj_Royal_Ship)) {
             image_index = 2;
             actionList = 'enemy';
