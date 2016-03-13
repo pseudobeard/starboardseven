@@ -108,7 +108,7 @@ if(locked &amp;&amp; instance_exists(obj_Target)) {
             <kind>1</kind>
             <string>///Monitor Hull, destroy if needed.
 if(shipHull &lt;= 0) {
-    destroy_ship(self);
+    instance_destroy();
 }
 </string>
           </argument>

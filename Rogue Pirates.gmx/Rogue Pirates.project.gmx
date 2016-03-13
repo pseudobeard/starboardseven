@@ -48,7 +48,6 @@
     <script>scripts\execute_royal_ship_ai.gml</script>
     <script>scripts\execute_merchant_ship_ai.gml</script>
     <script>scripts\fire_cannons.gml</script>
-    <script>scripts\destroy_ship.gml</script>
     <script>scripts\move_royal_ship.gml</script>
     <script>scripts\move_NPC.gml</script>
     <script>scripts\generate_islands.gml</script>

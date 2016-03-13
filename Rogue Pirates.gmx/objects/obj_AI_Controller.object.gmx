@@ -59,7 +59,7 @@ if(npcTurn &lt; npcLength) {
     if(instance_exists(currentNPC)){
         with(currentNPC){
             //If player gets close enough, activate.
-            if(distance_to_object(obj_Player_Ship) &lt;= 128) {
+            if(distance_to_object(obj_Player_Ship) &lt;= 256) {
                 activated = true;
             }
             
