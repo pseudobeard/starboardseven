@@ -30,10 +30,12 @@
     </sprites>
     <sprites name="gspr_Environment">
       <sprite>sprites\spr_Ocean_Wave</sprite>
+      <sprite>sprites\spr_Desert_Island</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_Terrain_Tiles</background>
+    <background>background\waterBG</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -80,7 +82,10 @@
       <object>objects\obj_Cursor</object>
       <object>objects\obj_Target</object>
     </objects>
-    <object>objects\obj_wave</object>
+    <objects name="gobj_Environment">
+      <object>objects\obj_wave</object>
+      <object>objects\obj_Desert_Island</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_gameArena</room>
