@@ -64,6 +64,7 @@ var myWreck = instance_create(x, y, obj_Wreckage);
 myWreck.gold = floor(shipGold / 1000);
 myWreck.rum = floor(shipRum / 10);
 myWreck.crew = floor(shipCrew / 10);
+if( instance_number( obj_NPC_Ship_Parent ) == 1 ) playerTurn = true;
 </string>
           </argument>
         </arguments>
