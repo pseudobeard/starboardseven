@@ -77,7 +77,7 @@ targetID.shipHull -= floor(random(20));
           <argument>
             <kind>1</kind>
             <string>///Move Cannon Ball
-mp_linear_step(targetX + 16, targetY + 16, 5, false);
+mp_linear_step(targetX + 16, targetY + 16, 8, false);
 if(place_meeting(x, y, obj_NPC_Ship_Parent)) {
     effect_create_above(ef_explosion, x, y, 1, c_red);
     instance_destroy();

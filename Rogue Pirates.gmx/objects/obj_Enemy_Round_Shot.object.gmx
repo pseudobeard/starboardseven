@@ -79,7 +79,7 @@ if(instance_exists(obj_UI_Controller)) {
             <kind>1</kind>
             <string>///Move Cannon Ball
 if(instance_exists(obj_Player_Ship)) {
-    mp_linear_step(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, 5, false);
+    mp_linear_step(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, 8, false);
     if(place_meeting(x, y, obj_Player_Ship)) {
         effect_create_above(ef_explosion, x, y, 1, c_red);
         instance_destroy();

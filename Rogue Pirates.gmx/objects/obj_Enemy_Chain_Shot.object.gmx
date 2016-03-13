@@ -80,7 +80,7 @@ if(instance_exists(obj_UI_Controller)) {
             <string>///Move Chain Shot
 if(instance_exists(obj_Player_Ship)) {
     image_angle += 20;
-    mp_linear_step(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, 5, false);
+    mp_linear_step(obj_Player_Ship.x + 16, obj_Player_Ship.y + 16, 6, false);
     if(place_meeting(x, y, obj_Player_Ship)) {
         effect_create_above(ef_explosion, x, y, 1, c_red);
         instance_destroy();
