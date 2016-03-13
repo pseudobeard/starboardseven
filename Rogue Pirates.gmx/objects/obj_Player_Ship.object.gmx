@@ -298,6 +298,7 @@ if (playerTurn &amp;&amp; !disableActions) {
             move_player(ds_list_find_value(direction_list, i));
             ds_list_replace(direction_list, i, 'up');
         }
+        passive_repair();
     }
     else if(keyboard_check_pressed(ord('A'))) {
         ds_list_replace(direction_list, sail_speed-1, 'left');
@@ -306,6 +307,7 @@ if (playerTurn &amp;&amp; !disableActions) {
             move_player(ds_list_find_value(direction_list, i));
             ds_list_replace(direction_list, i, 'left');
         }
+        passive_repair();
     }
     else if(keyboard_check_pressed(ord('S'))) {
         ds_list_replace(direction_list, sail_speed-1, 'down');
@@ -314,6 +316,7 @@ if (playerTurn &amp;&amp; !disableActions) {
             move_player(ds_list_find_value(direction_list, i));
             ds_list_replace(direction_list, i, 'down');
         }
+        passive_repair();
     }
     else if(keyboard_check_pressed(ord('D'))) {
         ds_list_replace(direction_list, sail_speed-1, 'right');
@@ -322,6 +325,7 @@ if (playerTurn &amp;&amp; !disableActions) {
             move_player(ds_list_find_value(direction_list, i));
             ds_list_replace(direction_list, i, 'right');
         }
+        passive_repair();
     }
     else if(keyboard_check_pressed(ord('Q')) &amp;&amp; (playerRiggingHealth &gt; 0)) {
         if (sail_speed = 3) {
