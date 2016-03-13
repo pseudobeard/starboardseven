@@ -3,10 +3,6 @@ ship = argument0;
 if(instance_exists(ship) && ship.shipCrew > 0) {
     with(ship) {
         obj_AI_Controller.alarm[0] = 10;
-        var xx = 0;
-        var yy = 0;
-        var path_planning_steps_ahead = 5;
-        var path = path_add();
         var moveDir = choose('up', 'down', 'left', 'right');
         move_royal_ship( moveDir);
     }   

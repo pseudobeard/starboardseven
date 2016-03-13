@@ -5,7 +5,7 @@ var ss = 32;
 
 switch( sail_direction){
     case 'up':
-        if(place_meeting( x, y-32, obj_NPC_Ship_Parent)){
+        if(place_meeting( x, y-32, obj_NPC_Ship_Parent) || place_meeting( x, y-32, obj_Desert_Island)){
             //cannot move
             move_royal_ship( sail_direction2 );
             ss = 0;
@@ -17,7 +17,7 @@ switch( sail_direction){
         y -= ss;
         break;
     case 'left':
-        if(place_meeting(x - 32, y, obj_NPC_Ship_Parent)) {
+        if(place_meeting(x - 32, y, obj_NPC_Ship_Parent) || place_meeting( x-32, y, obj_Desert_Island)) { 
             //cannot make the move, try a different one.
             move_royal_ship( sail_direction2 );
             ss = 0;
@@ -28,7 +28,7 @@ switch( sail_direction){
         x -= ss;
         break;
     case 'down':
-        if(place_meeting(x, y + 32, obj_NPC_Ship_Parent)) {
+        if(place_meeting(x, y + 32, obj_NPC_Ship_Parent) || place_meeting( x+32, y, obj_Desert_Island)) {
             //cannot make the move, try a different one.
             move_royal_ship( sail_direction2 );
             ss = 0;
@@ -40,7 +40,7 @@ switch( sail_direction){
         y += ss;
         break;
     case 'right':
-        if(place_meeting(x + 32, y, obj_NPC_Ship_Parent)) {
+        if(place_meeting(x + 32, y, obj_NPC_Ship_Parent) || place_meeting( x, y + 32, obj_Desert_Island)) {
             //cannot make the move, try a different one.
             move_royal_ship( sail_direction2 );
             ss = 0;

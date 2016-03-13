@@ -46,9 +46,9 @@
     <script>scripts\destroy_cursor.gml</script>
     <script>scripts\move_player.gml</script>
     <script>scripts\execute_royal_ship_ai.gml</script>
-    <script>scripts\execute_merchant_ship_ai.gml</script>
     <script>scripts\fire_cannons.gml</script>
     <script>scripts\move_royal_ship.gml</script>
+    <script>scripts\execute_merchant_ship_ai.gml</script>
     <script>scripts\move_NPC.gml</script>
     <script>scripts\generate_islands.gml</script>
     <script>scripts\generate_enemies.gml</script>

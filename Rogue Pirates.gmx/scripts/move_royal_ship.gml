@@ -5,7 +5,7 @@ var ss = 32;
 
 switch( sail_direction){
     case 'up':
-        if(place_meeting( x, y-32, obj_NPC_Ship_Parent)){
+        if(place_meeting( x, y-32, obj_NPC_Ship_Parent) || place_meeting( x, y-32, obj_Desert_Island)){
             //cannot move
             ss = 0;
         } else {
@@ -16,7 +16,7 @@ switch( sail_direction){
         image_index = 2;
         break;
     case 'left':
-        if(place_meeting(x - 32, y, obj_NPC_Ship_Parent)) {
+        if(place_meeting(x - 32, y, obj_NPC_Ship_Parent) || place_meeting( x-32, y, obj_Desert_Island)) {
             //cannot make the move, try a different one.
             ss = 0;
         } else {
@@ -26,7 +26,7 @@ switch( sail_direction){
         image_index = 1;
         break;
     case 'down':
-        if(place_meeting(x, y + 32, obj_NPC_Ship_Parent)) {
+        if(place_meeting(x, y + 32, obj_NPC_Ship_Parent) || place_meeting( x, y + 32, obj_Desert_Island)) {
             //cannot make the move, try a different one.
             ss = 0;
         } else {
@@ -37,8 +37,8 @@ switch( sail_direction){
         image_index = 3;
         break;
     case 'right':
-        if(place_meeting(x + 32, y, obj_NPC_Ship_Parent)) {
-            //cannot make the move, try a different one.
+        if(place_meeting(x + 32, y, obj_NPC_Ship_Parent) || place_meeting( x+32, y, obj_Desert_Island)) {
+            //cannot make the move, try a different one. 
             ss = 0;
         } else {
             newWave = instance_create( x+16, y+16, obj_wave);
