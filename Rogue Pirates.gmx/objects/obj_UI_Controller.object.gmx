@@ -133,7 +133,7 @@ switch(actionList) {
             draw_set_colour(c_gray);
             draw_text(530, secondItem, 'Q : Toggle Sails');
         }
-        if((playerHull/playerMaxHull) * 100 &lt; 40) {
+        if((playerHull/playerMaxHull) * 100 &lt; 40 || (playerRiggingHealth/playerMaxHull) * 100 &lt; 40) {
             draw_set_colour(c_white);
             draw_text(530, thirdItem, 'R : Repair');
         } else {
@@ -164,7 +164,7 @@ switch(actionList) {
             draw_set_colour(c_gray);
             draw_text(530, thirdItem, 'Q : Toggle Sails');
         }
-        if((playerHull/playerMaxHull) * 100 &lt; 40) {
+        if((playerHull/playerMaxHull) * 100 &lt; 40 || (playerRiggingHealth/playerMaxHull) * 100 &lt; 40) {
             draw_set_colour(c_white);
             draw_text(530, fourthItem, 'R : Repair');
         } else {

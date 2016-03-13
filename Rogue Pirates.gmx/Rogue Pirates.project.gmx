@@ -50,6 +50,7 @@
     <script>scripts\move_NPC.gml</script>
     <script>scripts\generate_islands.gml</script>
     <script>scripts\generate_enemies.gml</script>
+    <script>scripts\emergency_repair.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\pirateFont</font>

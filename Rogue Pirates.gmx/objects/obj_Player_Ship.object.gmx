@@ -332,6 +332,12 @@ if (playerTurn &amp;&amp; !disableActions) {
             sprite_index = spr_Player_Ship;
         }
     }
+    else if(keyboard_check_pressed(ord('R')) &amp;&amp; (playerRiggingHealth &gt; 0)) {
+        if( playerRiggingHealth &lt; 40 || playerHull &lt; 40){
+            emergency_repair();
+            playerTurn = false;
+        }
+    }
 }
 </string>
           </argument>
