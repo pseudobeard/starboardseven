@@ -13,7 +13,7 @@ switch( sail_direction){
             newWave.image_angle = -90;
         }
         y -= ss;
-        image_index = 3;
+        image_index = 2;
         break;
     case 'left':
         if(place_meeting(x - 32, y, obj_NPC_Ship_Parent)) {
@@ -34,7 +34,7 @@ switch( sail_direction){
             newWave.image_angle = 90;
         }
         y += ss;
-        image_index = 2;
+        image_index = 3;
         break;
     case 'right':
         if(place_meeting(x + 32, y, obj_NPC_Ship_Parent)) {
