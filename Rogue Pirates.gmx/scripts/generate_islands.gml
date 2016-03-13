@@ -11,4 +11,3 @@ for(i = 0; i < ds_grid_width(grid_id); i++) {
             ds_grid_set_disk(grid_id, i, j, 3, 0); }
     }
 }
-

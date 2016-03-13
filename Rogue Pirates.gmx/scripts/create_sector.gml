@@ -7,10 +7,11 @@ for(i = 0; i < ds_grid_width(tile_grid); i++) {
         tile_id = ds_grid_get(tile_grid, i, j);
         switch (tile_id){
             case 0: //water
-                tile_add(bg_Terrain_Tiles, 32, 64, 32, 32, (i * 32) + xx, (j * 32) + yy, 99999);
+                //nothing
                 break;
-            case 1: //island
-                tile_add(bg_Terrain_Tiles, 96, 32, 32, 32, (i * 32) + xx, (j * 32) + yy, 99999);
+            case 1: //desert island
+                instance_create((i * 32) + xx, (j * 32) + yy, obj_Desert_Island);
+                //tile_add(bg_Terrain_Tiles, 96, 32, 32, 32, (i * 32) + xx, (j * 32) + yy, 99999);
                 break;
             }
     }

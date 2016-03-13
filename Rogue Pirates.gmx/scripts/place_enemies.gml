@@ -9,7 +9,11 @@ for(i = 0; i < ds_grid_width(enemy_grid); i++) {
             case 0: //nothing
                 break;
             case 1: //royal_ship
-                instance_create(view_xview[0] + i*32, view_yview[0] + j*32, obj_Royal_Ship);
+                var locMod = 0;
+                while(!place_free(view_xview[0] + i*32 + locMod, view_yview[0] + j*32 + locMod)){
+                    locMod += 32;
+                }
+                instance_create(view_xview[0] + i*32 + locMod, view_yview[0] + j*32 + locMod, obj_Royal_Ship);
                 break;
             }
     }

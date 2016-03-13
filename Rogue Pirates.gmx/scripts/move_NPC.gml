@@ -1,7 +1,7 @@
 ///move_royal_ship(str sail_direction, str sail_direction2)
 sail_direction = argument0;
 sail_direction2 = argument1;
-var ss = 32; 
+var ss = 32;
 
 switch( sail_direction){
     case 'up':

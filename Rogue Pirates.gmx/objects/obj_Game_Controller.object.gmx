@@ -53,6 +53,11 @@ view_yview[0] = (room_height / 2) - (view_yview[0] / 2);
 
 //Spawn the player ship.
 instance_create(view_xview[0] + 352, view_yview[0] + 256, obj_Player_Ship);
+if(place_meeting(obj_Player_Ship.x, obj_Player_Ship.y, obj_Desert_Island)){
+    with(instance_place(obj_Player_Ship.x, obj_Player_Ship.y, obj_Desert_Island)){
+        instance_destroy();
+    }
+}
 
 
 //Spawn test merchant ship
